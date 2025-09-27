@@ -1,0 +1,19 @@
+cookbook-mini/
+├─ public/
+│  └─ index.php
+├─ app/
+│  ├─ config/
+│  │  └─ db.php
+│  ├─ controllers/
+│  │  └─ RecipeController.php
+│  ├─ models/
+│  │  └─ Recipe.php
+│  └─ views/
+│     ├─ layout/
+│     │  ├─ header.php
+│     │  └─ footer.php
+│     └─ recipes/
+│        ├─ list.php
+│        ├─ form.php
+│        └─ _flash.php
+└─ database.sql

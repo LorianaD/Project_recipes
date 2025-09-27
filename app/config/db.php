@@ -2,7 +2,7 @@
 function db(): PDO {
     static $pdo = null;
     if ($pdo === null) {
-        $dsn = 'mysql:host=127.0.0.1;dbname=cookbook;charset=utf8mb4';
+        $dsn = 'mysql:host=localhost;port=3306;dbname=cookbook;charset=utf8mb4';
         $user = 'root';
         $pass = ''; // Laragon/MAMP: adapter si besoin
         $opts = [

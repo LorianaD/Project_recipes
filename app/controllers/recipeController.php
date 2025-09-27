@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../models/Recipe.php';
 
 function view(string $path, array $data = []) {
@@ -30,8 +31,10 @@ function sanitize(array $src): array {
 
 /* READ (liste) */
 function recipe_list_action() {
+//On a rappelé la fonction de la requête pour afficher les données
+    $recipes=  getAllRecipes();
 
-    view('recipes/list', ['title' => 'Recettes', 'recipes' => $recipes, 'flashes' => flashes()]);
+    view('recipes/list', ['title' => 'toutes les recettes', 'recipes' => $recipes, 'flashes' => flashes()]);
 }
 
 /* CREATE */

@@ -38,10 +38,27 @@ function recipe_list_action() {
 }
 
 /* CREATE */
-function recipe_create_action() {
+function add_action() {
+ if ($_SERVER[ 'REQUEST_METHOD'] === 'POST') {
+    $data = sanitize($_POST);
+    $errors = [];
 
+    if ($data['title'] === '') $errors[] = "Le titre est obligatoire";
+    if ($data['steps'] === '') $errors[] = "Les étapes sont obligatoires";
 
-    view('recipes/form', ['title'=>'Nouvelle recette', 'mode'=>'create', 'data'=>[], 'flashes'=>flashes()]);
+    if ($errors) {
+        foreach ($errors as $e) flash ('error',$e);
+        
+    } else {
+          $id = setRecipe($data);           
+            flash('success', "Recette #$id ajoutée !");
+            header('Location: index.php?action=list'); 
+            exit;
+    }
+ }
+
+    view('recipes/add', ['title'=>'Nouvelle recette','data'=> $_POST ?? [],'mode'=>'add',
+    'flashes'=>flashes()]);
 }
 
 /* UPDATE */

@@ -24,7 +24,7 @@
   <h1 style="margin:0">CookBook Mini</h1>
   <nav>
     <a class="button" href="index.php?action=list">Toutes les recettes</a>
-    <a class="button" href="index.php?action=create">Ajouter</a>
+    <a class="button" href="index.php?action=add">Ajouter</a>
   </nav>
 </header>
 <main>
